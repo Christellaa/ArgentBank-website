@@ -19,6 +19,7 @@
     "mongoose": "^5.9.21",
     "mongosh": "^1.8.1",
     "node": "^19.8.1",
+    "react-router-dom": "^6.10.0",
     "swagger-ui-express": "^4.1.4",
     "yamljs": "^0.3.0"
   },
