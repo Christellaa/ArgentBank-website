@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import accountsData from "../data/accountsData.json";
 import Accounts from "../components/Accounts";
 import Footer from "../components/Footer";
 
