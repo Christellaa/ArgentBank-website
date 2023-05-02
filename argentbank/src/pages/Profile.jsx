@@ -17,7 +17,9 @@ function Profile() {
           <button class="edit-button">Edit Name</button>
         </div>
         <h2 class="sr-only">Accounts</h2>
-        <Accounts />
+        {accountsData.map(({ id, title, amount, text }) => (
+          <Accounts key={id} title={title} amount={amount} text={text} />
+        ))}
       </main>
       <Footer />
     </>
