@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import Form from "../components/Form";
+import LoginForm from "../components/LoginForm";
 import Footer from "../components/Footer";
 
 function Login() {
@@ -10,7 +10,7 @@ function Login() {
         <section className="sign-in-content">
           <i className="fa fa-user-circle sign-in-icon"></i>
           <h1>Sign In</h1>
-          <Form />
+          <LoginForm />
         </section>
       </main>
       <Footer />
