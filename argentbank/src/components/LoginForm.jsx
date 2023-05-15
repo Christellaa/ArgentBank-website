@@ -12,16 +12,17 @@ function LoginForm() {
     password: document.getElementById("password"),
   };
 
-  const [submit, setSubmit] = useState(false);
-
-  setTimeout(() => {
-    setSubmit(false);
-  }, 3000);
-
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    setSubmit(true);
-    alert("you have submitted the form!");
+
+    const formSent = await dispatch(
+      sendForm({ username: username, password: password })
+    );
+    if (sendForm.fulfilled.match(formSent)) {
+      navigate("/profile");
+    } else if (sendForm.rejected.match(formSent)) {
+      return error;
+    }
   }
 
   return (
