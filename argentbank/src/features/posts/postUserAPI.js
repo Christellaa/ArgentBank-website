@@ -14,9 +14,7 @@ export const sendForm = createAsyncThunk(
         password: values.password,
       }),
     });
-    console.log(res);
     if (!res.ok) {
-      console.log(res);
       return thunkApi.rejectWithValue(values);
     }
     return res.json();
