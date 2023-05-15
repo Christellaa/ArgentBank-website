@@ -28,6 +28,7 @@ function LoginForm() {
 
   return (
     <>
+      <form method="post" onSubmit={handleSubmit}>
         <div className="input-wrapper">
           <label htmlFor="username">Username</label>
           <input
