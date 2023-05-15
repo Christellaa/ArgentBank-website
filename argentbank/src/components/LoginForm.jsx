@@ -1,5 +1,3 @@
-import { useStore } from "react-redux";
-import { useEffect } from "react";
 import { useState } from "react";
 import { sendForm } from "../features/posts/postUserAPI";
 import { useDispatch, useSelector } from "react-redux";
@@ -56,7 +54,7 @@ function LoginForm() {
           <input type="checkbox" id="remember-me" />
           <label htmlFor="remember-me">Remember me</label>
         </div>
-        <button disabled={submit} type="submit" className="sign-in-button">
+        <button disabled={loading} type="submit" className="sign-in-button">
           Sign In
         </button>
       </form>
