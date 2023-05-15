@@ -28,24 +28,22 @@ function LoginForm() {
 
   return (
     <>
-      {submit}
-      <form onSubmit={handleSubmit}>
-        <div className="input-wrapper" disabled={submit}>
+        <div className="input-wrapper">
           <label htmlFor="username">Username</label>
           <input
             type="text"
             id="username"
             required
-            value={FormData.username || ""}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div className="input-wrapper" disabled={submit}>
+        <div className="input-wrapper">
           <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
             required
-            value={FormData.password || ""}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className="input-remember">
