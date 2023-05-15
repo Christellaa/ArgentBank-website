@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { sendForm } from "./postUserAPI";
+import { sendForm } from "./loginAPI";
 
 const initialState = {
   loading: false,
@@ -7,8 +7,8 @@ const initialState = {
   error: null,
 };
 
-const postUserSlice = createSlice({
-  name: "postUser",
+const loginSlice = createSlice({
+  name: "login",
   initialState: { ...initialState },
   reducers: {},
   extraReducers: (builder) => {
@@ -30,4 +30,4 @@ const postUserSlice = createSlice({
   },
 });
 
-export default postUserSlice.reducer;
+export default loginSlice.reducer;

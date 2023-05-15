@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import argentBankLogo from "../img/argentBankLogo.png";
 import formSent from "./LoginForm";
-import { sendForm } from "../features/posts/postUserAPI";
+import { sendForm } from "../features/posts/loginAPI";
 
 function Navbar() {
   return (

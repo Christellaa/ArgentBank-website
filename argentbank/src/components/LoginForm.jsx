@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { sendForm } from "../features/posts/postUserAPI";
+import { sendForm } from "../features/posts/loginAPI";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
-  const { loading, error } = useSelector((state) => state.postUser);
+  const { loading, error } = useSelector((state) => state.login);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
