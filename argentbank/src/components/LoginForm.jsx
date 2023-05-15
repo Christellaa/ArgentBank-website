@@ -1,16 +1,16 @@
 import { useStore } from "react-redux";
 import { useEffect } from "react";
 import { useState } from "react";
-import { PostUser } from "../features/posts/postUser";
+import { sendForm } from "../features/posts/postUserAPI";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const user = {
-    username: document.getElementById("username"),
-    password: document.getElementById("password"),
-  };
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
