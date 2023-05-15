@@ -29,3 +29,5 @@ const postUserSlice = createSlice({
       });
   },
 });
+
+export default postUserSlice.reducer;
