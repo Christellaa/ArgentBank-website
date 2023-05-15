@@ -4,10 +4,8 @@ import { useState } from "react";
 import { PostUser } from "../features/posts/postUser";
 
 function LoginForm() {
-  const store = useStore();
-  useEffect(() => {
-    PostUser(store);
-  }, [store]);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const user = {
     username: document.getElementById("username"),
