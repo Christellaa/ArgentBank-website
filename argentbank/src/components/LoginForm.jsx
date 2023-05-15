@@ -29,6 +29,11 @@ function LoginForm() {
   return (
     <>
       <form method="post" onSubmit={handleSubmit}>
+        {error && (
+          <div>
+            <p class="sign-in-error">Incorrect username or password.</p>
+          </div>
+        )}
         <div className="input-wrapper">
           <label htmlFor="username">Username</label>
           <input
