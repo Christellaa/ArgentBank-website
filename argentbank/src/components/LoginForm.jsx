@@ -29,7 +29,7 @@ function LoginForm() {
       <form method="post" onSubmit={handleSubmit}>
         {error && (
           <div>
-            <p class="sign-in-error">Incorrect username or password.</p>
+            <p className="sign-in-error">Incorrect username or password.</p>
           </div>
         )}
         <div className="input-wrapper">
