@@ -13,7 +13,6 @@ const loginSlice = createSlice({
   initialState: { ...initialState },
   reducers: {
     logout: (state) => {
-      localStorage.getItem("token");
       localStorage.removeItem("token");
       state.data = null;
       state.isLoggedIn = false;
