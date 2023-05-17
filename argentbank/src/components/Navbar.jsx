@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 function Navbar() {
   const dispatch = useDispatch();
   const userLoggedIn = useSelector((state) => state.login.isLoggedIn);
+  const logOut = dispatch(logout);
+
   return (
     <nav className="main-nav">
       <Link to="/" className="main-nav-logo">
@@ -17,7 +19,7 @@ function Navbar() {
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
       {userLoggedIn === true ? (
-        <Link to="/login" className="main-nav-item">
+        <Link to="/" className="main-nav-item" onClick={logOut}>
           <i className="fa fa-user-circle"></i>
           Log out
         </Link>
