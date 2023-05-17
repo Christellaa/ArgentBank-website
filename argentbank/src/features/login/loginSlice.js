@@ -10,7 +10,14 @@ const initialState = {
 const loginSlice = createSlice({
   name: "login",
   initialState: { ...initialState },
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      localStorage.getItem("token");
+      localStorage.removeItem("token");
+      state.data = null;
+      state.isLoggedIn = false;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(sendForm.pending, (state) => {
