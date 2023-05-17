@@ -28,6 +28,7 @@ const loginSlice = createSlice({
       .addCase(sendForm.fulfilled, (state, action) => {
         state.loading = false;
         state.data = action.payload.body.token;
+        localStorage.setItem("token", state.data);
       })
       .addCase(sendForm.rejected, (state, action) => {
         state.loading = false;
