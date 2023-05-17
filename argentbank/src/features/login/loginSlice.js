@@ -5,6 +5,7 @@ const initialState = {
   loading: false,
   data: null,
   error: null,
+  isLoggedIn: false,
 };
 
 const loginSlice = createSlice({
@@ -29,6 +30,7 @@ const loginSlice = createSlice({
         state.loading = false;
         state.data = action.payload.body.token;
         localStorage.setItem("token", state.data);
+        state.isLoggedIn = true;
       })
       .addCase(sendForm.rejected, (state, action) => {
         state.loading = false;
