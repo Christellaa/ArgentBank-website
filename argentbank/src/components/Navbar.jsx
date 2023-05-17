@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import argentBankLogo from "../img/argentBankLogo.png";
-import formSent from "./LoginForm";
-import { sendForm } from "../features/login/loginAPI";
+import logout from "../features/login/loginSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function Navbar() {
+  const dispatch = useDispatch();
+  const userLoggedIn = useSelector((state) => state.login.isLoggedIn);
   return (
     <nav className="main-nav">
       <Link to="/" className="main-nav-logo">
@@ -14,15 +16,15 @@ function Navbar() {
         />
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
-      {sendForm.fulfilled.match(formSent) ? (
+      {userLoggedIn === true ? (
         <Link to="/login" className="main-nav-item">
           <i className="fa fa-user-circle"></i>
-          Sign In
+          Log out
         </Link>
       ) : (
         <Link to="/login" className="main-nav-item">
           <i className="fa fa-user-circle"></i>
-          Log out
+          Sign In
         </Link>
       )}
     </nav>
