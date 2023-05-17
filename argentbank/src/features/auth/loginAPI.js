@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const sendForm = createAsyncThunk(
-  "login/loginAPI",
+  "auth/loginAPI",
   async (values, thunkApi) => {
     const res = await fetch("http://localhost:3001/api/v1/user/login", {
       method: "POST",
