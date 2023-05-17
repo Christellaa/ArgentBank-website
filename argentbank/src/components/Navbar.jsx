@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import argentBankLogo from "../img/argentBankLogo.png";
-import logout from "../features/login/loginSlice";
+import { logout } from "../features/login/loginSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 function Navbar() {
   const dispatch = useDispatch();
   const userLoggedIn = useSelector((state) => state.login.isLoggedIn);
-  const logOut = dispatch(logout);
 
   return (
     <nav className="main-nav">
@@ -19,7 +18,11 @@ function Navbar() {
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
       {userLoggedIn === true ? (
-        <Link to="/" className="main-nav-item" onClick={logOut}>
+        <Link
+          to="/"
+          className="main-nav-item"
+          onClick={() => dispatch(logout())}
+        >
           <i className="fa fa-user-circle"></i>
           Log out
         </Link>
