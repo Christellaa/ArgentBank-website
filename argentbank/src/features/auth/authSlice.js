@@ -3,7 +3,7 @@ import { sendForm } from "./loginAPI";
 
 const initialState = {
   loading: false,
-  data: null,
+  token: null,
   error: null,
   isLoggedIn: false,
 };
@@ -14,7 +14,7 @@ const authSlice = createSlice({
   reducers: {
     logout: (state) => {
       localStorage.removeItem("token");
-      state.data = null;
+      state.token = null;
       state.isLoggedIn = false;
     },
   },
@@ -22,18 +22,18 @@ const authSlice = createSlice({
     builder
       .addCase(sendForm.pending, (state) => {
         state.loading = true;
-        state.data = null;
+        state.user = null;
         state.error = null;
       })
       .addCase(sendForm.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload.body.token;
-        localStorage.setItem("token", state.data);
+        state.token = action.payload.body.token;
+        localStorage.setItem("token", state.token);
         state.isLoggedIn = true;
       })
       .addCase(sendForm.rejected, (state, action) => {
         state.loading = false;
-        state.data = null;
+        state.user = null;
         state.error = action.error.message;
       });
   },
