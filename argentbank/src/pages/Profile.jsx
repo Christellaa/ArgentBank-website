@@ -4,9 +4,10 @@ import Accounts from "../components/Accounts";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { selectUserLoggedIn } from "../app/selectors";
 
 function Profile() {
-  const userLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const userLoggedIn = useSelector(selectUserLoggedIn);
   return (
     <>
       {userLoggedIn === true ? (

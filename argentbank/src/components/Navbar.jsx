@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import argentBankLogo from "../img/argentBankLogo.png";
 import { logout } from "../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { selectUserLoggedIn } from "../app/selectors";
 
 function Navbar() {
   const dispatch = useDispatch();
-  const userLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const userLoggedIn = useSelector(selectUserLoggedIn);
 
   return (
     <nav className="main-nav">
