@@ -11,7 +11,12 @@ const initialState = {
 const authSlice = createSlice({
   name: "auth",
   initialState: { ...initialState },
-  reducers: {},
+  reducers: {
+    userToken(state, action) {
+      state.token = action.payload;
+      state.isLoggedIn = true;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(sendForm.pending, (state) => {
@@ -37,4 +42,5 @@ const authSlice = createSlice({
   },
 });
 
+export const { userToken } = authSlice.actions;
 export default authSlice.reducer;
