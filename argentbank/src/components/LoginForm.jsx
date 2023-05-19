@@ -27,40 +27,38 @@ function LoginForm() {
   }
 
   return (
-    <>
-      <form method="post" onSubmit={handleSubmit}>
-        {error && (
-          <div>
-            <p className="sign-in-error">Incorrect username or password.</p>
-          </div>
-        )}
-        <div className="input-wrapper">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            required
-            onChange={(e) => setUsername(e.target.value)}
-          />
+    <form method="post" onSubmit={handleSubmit}>
+      {error && (
+        <div>
+          <p className="sign-in-error">Incorrect username or password.</p>
         </div>
-        <div className="input-wrapper">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="input-remember">
-          <input type="checkbox" id="remember-me" />
-          <label htmlFor="remember-me">Remember me</label>
-        </div>
-        <button disabled={loading} type="submit" className="sign-in-button">
-          Sign In
-        </button>
-      </form>
-    </>
+      )}
+      <div className="input-wrapper">
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          required
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </div>
+      <div className="input-wrapper">
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+      <div className="input-remember">
+        <input type="checkbox" id="remember-me" />
+        <label htmlFor="remember-me">Remember me</label>
+      </div>
+      <button disabled={loading} type="submit" className="sign-in-button">
+        Sign In
+      </button>
+    </form>
   );
 }
 
