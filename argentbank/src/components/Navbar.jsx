@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import argentBankLogo from "../img/argentBankLogo.png";
-import { logout } from "../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUserLoggedIn } from "../app/selectors";
 
@@ -22,7 +21,7 @@ function Navbar() {
         <Link
           to="/"
           className="main-nav-item"
-          onClick={() => dispatch(logout())}
+          onClick={() => dispatch({ type: "LOGOUT" })}
         >
           <i className="fa fa-user-circle"></i>
           Log out
