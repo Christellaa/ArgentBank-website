@@ -19,7 +19,7 @@ function UpdateForm({ username, firstname, lastname }) {
             type="text"
             id="username"
             required
-            placeholder={`${firstname}`}
+            value={`${username}`}
             //   onChange={(e) => setUsername(e.target.value)}
           />
         </div>
@@ -38,7 +38,7 @@ function UpdateForm({ username, firstname, lastname }) {
             className="input--update"
             type="text"
             id="lastname"
-            value={`${firstname}`}
+            value={`${lastname}`}
           />
         </div>
         <div className="features update-buttons">
