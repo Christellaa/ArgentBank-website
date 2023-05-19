@@ -32,7 +32,7 @@ function Profile() {
         </>
       ) : (
         <div>
-          <p>Vous n'avez pas accès à cette page. Veuillez vous connecter.</p>
+          <p>You don't have access to this page. Please sign in.</p>
           <Link to="/login" className="main-nav-item">
             <i className="fa fa-user-circle"></i>
             Sign In
