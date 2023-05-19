@@ -30,6 +30,7 @@ function UpdateForm({ username, firstname, lastname }) {
             type="text"
             id="firstname"
             value={`${firstname}`}
+            readOnly
           />
         </div>
         <div className="input-wrapper--update">
@@ -39,6 +40,7 @@ function UpdateForm({ username, firstname, lastname }) {
             type="text"
             id="lastname"
             value={`${lastname}`}
+            readOnly
           />
         </div>
         <div className="features update-buttons">
