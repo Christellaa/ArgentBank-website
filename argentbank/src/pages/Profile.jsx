@@ -5,10 +5,16 @@ import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { selectUserLoggedIn } from "../app/selectors";
+import UpdateForm from "../components/UpdateForm";
+import { useState } from "react";
 
 function Profile() {
   const userLoggedIn = useSelector(selectUserLoggedIn);
-  const { username } = useSelector((state) => state.user);
+  const { username, firstname, lastname } = useSelector((state) => state.user);
+  const [isUpdating, setUpdate] = useState(false);
+  function Toggle() {
+    setUpdate(!isUpdating);
+  }
   return (
     <>
       {userLoggedIn === true ? (
@@ -16,12 +22,19 @@ function Profile() {
           <Navbar />
           <main className="main bg-dark">
             <div className="header">
-              <h1>
-                Welcome back
-                <br />
-                {username}
-              </h1>
-              <button className="edit-button">Edit Name</button>
+              {!isUpdating && (
+                <>
+                  <h1>
+                    Welcome back
+                    <br />
+                    {username}
+                  </h1>
+                  <button className="edit-button" onClick={Toggle}>
+                    Edit Name
+                  </button>
+                </>
+              )}
+              {isUpdating && UpdateForm(username, firstname, lastname)}
             </div>
             <h2 className="sr-only">Accounts</h2>
             {accountsData.map(({ id, title, amount, text }) => (
