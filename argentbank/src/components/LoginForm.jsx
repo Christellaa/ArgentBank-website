@@ -2,6 +2,7 @@ import { useState } from "react";
 import { sendForm } from "../features/auth/loginAPI";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { fetchUser } from "../features/profile/fetchUserAPI";
 
 function LoginForm() {
   const { loading, error } = useSelector((state) => state.auth);
@@ -18,6 +19,7 @@ function LoginForm() {
       sendForm({ username: username, password: password })
     );
     if (sendForm.fulfilled.match(formSent)) {
+      dispatch(fetchUser());
       navigate("/profile");
     } else if (sendForm.rejected.match(formSent)) {
       return error;
