@@ -26,7 +26,7 @@ function UpdateForm({ username, firstname, lastname }) {
         <div className="input-wrapper--update">
           <label htmlFor="firstname">First name:</label>
           <input
-            className="input--update"
+            className="input--update input--intangible"
             type="text"
             id="firstname"
             value={`${firstname}`}
@@ -36,7 +36,7 @@ function UpdateForm({ username, firstname, lastname }) {
         <div className="input-wrapper--update">
           <label htmlFor="lastname">Last name:</label>
           <input
-            className="input--update"
+            className="input--update input--intangible"
             type="text"
             id="lastname"
             value={`${lastname}`}
