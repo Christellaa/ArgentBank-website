@@ -8,6 +8,7 @@ import { selectUserLoggedIn } from "../app/selectors";
 
 function Profile() {
   const userLoggedIn = useSelector(selectUserLoggedIn);
+  const { username } = useSelector((state) => state.user);
   return (
     <>
       {userLoggedIn === true ? (
@@ -18,7 +19,7 @@ function Profile() {
               <h1>
                 Welcome back
                 <br />
-                Tony Jarvis!
+                {username}
               </h1>
               <button className="edit-button">Edit Name</button>
             </div>
