@@ -11,13 +11,7 @@ const initialState = {
 const authSlice = createSlice({
   name: "auth",
   initialState: { ...initialState },
-  reducers: {
-    logout: (state) => {
-      localStorage.removeItem("token");
-      state.token = null;
-      state.isLoggedIn = false;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(sendForm.pending, (state) => {
@@ -35,9 +29,12 @@ const authSlice = createSlice({
         state.loading = false;
         state.user = null;
         state.error = action.error.message;
+      })
+      .addCase("LOGOUT", (state) => {
+        localStorage.removeItem("token");
+        Object.assign(state, initialState);
       });
   },
 });
 
-export const { logout } = authSlice.actions;
 export default authSlice.reducer;
