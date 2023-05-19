@@ -6,7 +6,7 @@ import { selectUserLoggedIn } from "../app/selectors";
 function Navbar() {
   const dispatch = useDispatch();
   const userLoggedIn = useSelector(selectUserLoggedIn);
-  const { username } = useSelector((state) => state.user);
+  const { userName } = useSelector((state) => state.user);
 
   return (
     <nav className="main-nav">
@@ -22,7 +22,7 @@ function Navbar() {
         <div>
           <Link to="/profile" className="main-nav-item">
             <i className="fa fa-user-circle"></i>
-            {username}
+            {userName}
           </Link>
           <Link
             to="/"

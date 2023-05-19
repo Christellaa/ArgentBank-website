@@ -10,7 +10,7 @@ import { useState } from "react";
 
 function Profile() {
   const userLoggedIn = useSelector(selectUserLoggedIn);
-  const { username, firstname, lastname } = useSelector((state) => state.user);
+  const { userName, firstName, lastName } = useSelector((state) => state.user);
   const [isUpdating, setUpdate] = useState(false);
   function Toggle() {
     setUpdate(!isUpdating);
@@ -27,14 +27,15 @@ function Profile() {
                   <h1>
                     Welcome back
                     <br />
-                    {username}
+                    {userName}
                   </h1>
                   <button className="edit-button" onClick={Toggle}>
                     Edit Name
                   </button>
                 </>
               )}
-              {isUpdating && UpdateForm(username, firstname, lastname)}
+              {isUpdating &&
+                UpdateForm({ Toggle, userName, firstName, lastName })}
             </div>
             <h2 className="sr-only">Accounts</h2>
             {accountsData.map(({ id, title, amount, text }) => (

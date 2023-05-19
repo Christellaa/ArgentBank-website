@@ -1,15 +1,6 @@
-import { useState } from "react";
-import Profile from "../pages/Profile";
-
-function UpdateForm({ username, firstname, lastname }) {
-  //   const [isUpdating, setUpdate] = useState(true);
-  //   function Toggle() {
-  //     setUpdate(isUpdating);
-  //   }
-
+function UpdateForm({ Toggle, userName, firstName, lastName }) {
   return (
     <>
-      {/* {isUpdating && ( */}
       <h1>Edit user info</h1>
       <form method="post">
         <div className="input-wrapper--update">
@@ -19,7 +10,7 @@ function UpdateForm({ username, firstname, lastname }) {
             type="text"
             id="username"
             required
-            value={`${username}`}
+            value={`${userName}`}
             //   onChange={(e) => setUsername(e.target.value)}
           />
         </div>
@@ -29,7 +20,7 @@ function UpdateForm({ username, firstname, lastname }) {
             className="input--update input--intangible"
             type="text"
             id="firstname"
-            value={`${firstname}`}
+            value={`${firstName}`}
             readOnly
           />
         </div>
@@ -39,7 +30,7 @@ function UpdateForm({ username, firstname, lastname }) {
             className="input--update input--intangible"
             type="text"
             id="lastname"
-            value={`${lastname}`}
+            value={`${lastName}`}
             readOnly
           />
         </div>
@@ -47,14 +38,11 @@ function UpdateForm({ username, firstname, lastname }) {
           <button type="submit" className="buttons update-button">
             Save
           </button>
-          <button className="buttons update-button">
-            {/* onClick={Toggle} */}
+          <button className="buttons update-button" onClick={Toggle}>
             Cancel
           </button>
         </div>
       </form>
-      {/* )} */}
-      {/* {!isUpdating && Profile()} */}
     </>
   );
 }
