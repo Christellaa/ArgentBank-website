@@ -6,6 +6,7 @@ import { selectUserLoggedIn } from "../app/selectors";
 function Navbar() {
   const dispatch = useDispatch();
   const userLoggedIn = useSelector(selectUserLoggedIn);
+  const { username } = useSelector((state) => state.user);
 
   return (
     <nav className="main-nav">
@@ -18,14 +19,20 @@ function Navbar() {
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
       {userLoggedIn === true ? (
-        <Link
-          to="/"
-          className="main-nav-item"
-          onClick={() => dispatch({ type: "LOGOUT" })}
-        >
-          <i className="fa fa-user-circle"></i>
-          Log out
-        </Link>
+        <div>
+          <Link to="/profile" class="main-nav-item">
+            <i className="fa fa-user-circle"></i>
+            {username}
+          </Link>
+          <Link
+            to="/"
+            className="main-nav-item"
+            onClick={() => dispatch({ type: "LOGOUT" })}
+          >
+            <i class="fa fa-sign-out"></i>
+            Sign Out
+          </Link>
+        </div>
       ) : (
         <Link to="/login" className="main-nav-item">
           <i className="fa fa-user-circle"></i>
