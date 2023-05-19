@@ -20,7 +20,7 @@ function Navbar() {
       </Link>
       {userLoggedIn === true ? (
         <div>
-          <Link to="/profile" class="main-nav-item">
+          <Link to="/profile" className="main-nav-item">
             <i className="fa fa-user-circle"></i>
             {username}
           </Link>
@@ -29,7 +29,7 @@ function Navbar() {
             className="main-nav-item"
             onClick={() => dispatch({ type: "LOGOUT" })}
           >
-            <i class="fa fa-sign-out"></i>
+            <i className="fa fa-sign-out"></i>
             Sign Out
           </Link>
         </div>
