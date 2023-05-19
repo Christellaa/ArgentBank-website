@@ -55,7 +55,11 @@ function LoginForm() {
         <input type="checkbox" id="remember-me" />
         <label htmlFor="remember-me">Remember me</label>
       </div>
-      <button disabled={loading} type="submit" className="sign-in-button">
+      <button
+        disabled={loading}
+        type="submit"
+        className="buttons sign-in-button"
+      >
         Sign In
       </button>
     </form>
