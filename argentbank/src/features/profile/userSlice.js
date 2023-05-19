@@ -3,7 +3,7 @@ import { fetchUser } from "./fetchUserAPI";
 
 const initialState = {
   loading: false,
-  username: null,
+  userName: null,
   firstName: null,
   lastName: null,
   error: null,
@@ -17,20 +17,20 @@ const userSlice = createSlice({
     builder
       .addCase(fetchUser.pending, (state) => {
         state.loading = true;
-        state.username = null;
+        state.userName = null;
         state.firstName = null;
         state.lastName = null;
         state.error = null;
       })
       .addCase(fetchUser.fulfilled, (state, action) => {
         state.loading = false;
-        state.username = action.payload.body.userName;
+        state.userName = action.payload.body.userName;
         state.firstName = action.payload.body.firstName;
         state.lastName = action.payload.body.lastName;
       })
       .addCase(fetchUser.rejected, (state, action) => {
         state.loading = false;
-        state.username = null;
+        state.userName = null;
         state.firstName = null;
         state.lastName = null;
         state.error = action.error.message;
