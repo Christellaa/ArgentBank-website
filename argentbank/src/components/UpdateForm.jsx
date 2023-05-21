@@ -21,7 +21,7 @@ function UpdateForm({ Toggle, userName, firstName, lastName }) {
             type="text"
             id="firstname"
             value={`${firstName}`}
-            readOnly
+            readOnly={true}
           />
         </div>
         <div className="input-wrapper--update">
@@ -31,7 +31,7 @@ function UpdateForm({ Toggle, userName, firstName, lastName }) {
             type="text"
             id="lastname"
             value={`${lastName}`}
-            readOnly
+            readOnly={true}
           />
         </div>
         <div className="features update-buttons">
