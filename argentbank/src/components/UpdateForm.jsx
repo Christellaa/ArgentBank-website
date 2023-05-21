@@ -10,6 +10,9 @@ function UpdateForm({ Toggle, userName, firstName, lastName }) {
   async function handleSubmit(e) {
     e.preventDefault();
     const updateUsername = await dispatch(updateUser({ username: username }));
+    if (updateUser.fulfilled.match(updateUsername)) {
+      Toggle();
+    }
   }
 
   return (
