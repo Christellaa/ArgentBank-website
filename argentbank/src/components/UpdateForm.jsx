@@ -1,8 +1,11 @@
 function UpdateForm({ Toggle, userName, firstName, lastName }) {
+  async function handleSubmit(e) {
+  }
+
   return (
     <>
       <h1>Edit user info</h1>
-      <form method="post">
+      <form method="post" onSubmit={handleSubmit}>
         <div className="input-wrapper--update">
           <label htmlFor="username">User name:</label>
           <input
