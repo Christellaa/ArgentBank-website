@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchUser } from "./fetchUserAPI";
+import { updateUser } from "./updateUserAPI";
 
 const initialState = {
   loading: false,
@@ -34,6 +35,15 @@ const userSlice = createSlice({
         state.firstName = null;
         state.lastName = null;
         state.error = action.error.message;
+      })
+      .addCase(updateUser.pending, (state) => {
+        state.loading = true;
+        state.userName = null;
+        state.error = null;
+      })
+      .addCase(updateUser.fulfilled, (state, action) => {
+        state.loading = false;
+        state.userName = action.payload.body.userName;
       })
       .addCase("LOGOUT", (state) => {
         Object.assign(state, initialState);
