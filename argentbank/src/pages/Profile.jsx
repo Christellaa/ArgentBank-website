@@ -34,8 +34,14 @@ function Profile() {
                   </button>
                 </>
               )}
-              {isUpdating &&
-                UpdateForm({ Toggle, userName, firstName, lastName })}
+              {isUpdating && (
+                <UpdateForm
+                  Toggle={Toggle}
+                  userName={userName}
+                  firstName={firstName}
+                  lastName={lastName}
+                />
+              )}
             </div>
             <h2 className="sr-only">Accounts</h2>
             {accountsData.map(({ id, title, amount, text }) => (
