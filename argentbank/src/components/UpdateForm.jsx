@@ -10,7 +10,7 @@ function UpdateForm({ Toggle, userName, firstName, lastName }) {
             type="text"
             id="username"
             required
-            value={`${userName}`}
+            defaultValue={`${userName}`}
             //   onChange={(e) => setUsername(e.target.value)}
           />
         </div>
