@@ -1,6 +1,15 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { updateUser } from "../features/profile/updateUserAPI";
+
 function UpdateForm({ Toggle, userName, firstName, lastName }) {
   const [username, setUsername] = useState("");
+
+  const dispatch = useDispatch();
+
   async function handleSubmit(e) {
+    e.preventDefault();
+    const updateUsername = await dispatch(updateUser({ username: username }));
   }
 
   return (
