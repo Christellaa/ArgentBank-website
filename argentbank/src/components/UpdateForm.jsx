@@ -3,15 +3,21 @@ import { useDispatch } from "react-redux";
 import { updateUser } from "../features/profile/updateUserAPI";
 
 function UpdateForm({ Toggle, userName, firstName, lastName }) {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState(userName);
 
   const dispatch = useDispatch();
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const updateUsername = await dispatch(updateUser({ username: username }));
-    if (updateUser.fulfilled.match(updateUsername)) {
-      Toggle();
+    if (username === userName) {
+      alert("Your username hasn't changed");
+    } else if (username === "" || username === null) {
+      alert("You don't have a username");
+    } else {
+      const updateUsername = await dispatch(updateUser({ username: username }));
+      if (updateUser.fulfilled.match(updateUsername)) {
+        Toggle();
+      }
     }
   }
 
