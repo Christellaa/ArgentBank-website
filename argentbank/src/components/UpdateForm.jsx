@@ -15,7 +15,7 @@ function UpdateForm({ Toggle, userName, firstName, lastName }) {
             id="username"
             required
             defaultValue={`${userName}`}
-            //   onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         <div className="input-wrapper--update">
