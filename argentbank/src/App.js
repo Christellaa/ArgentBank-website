@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Error from "./pages/Error";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import "./App.css";
@@ -22,6 +23,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="*" element={<Error />} />
     </Routes>
   );
 }
