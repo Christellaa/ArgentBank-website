@@ -21,7 +21,7 @@ const authSlice = createSlice({
     builder
       .addCase(sendForm.pending, (state) => {
         state.loading = true;
-        state.user = null;
+        state.token = null;
         state.error = null;
       })
       .addCase(sendForm.fulfilled, (state, action) => {
@@ -32,7 +32,7 @@ const authSlice = createSlice({
       })
       .addCase(sendForm.rejected, (state, action) => {
         state.loading = false;
-        state.user = null;
+        state.token = null;
         state.error = action.error.message;
       })
       .addCase("LOGOUT", (state) => {
